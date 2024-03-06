@@ -1,0 +1,22 @@
+.mainback {
+    min-height: 93vh;
+    display: flex;
+    padding: 10px 0px;
+}
+
+.page {
+    width: 100%;
+}
+
+.heading {
+    font-size: 60px;
+    padding: 5px 10px;
+}
+
+@media only screen and (max-width) {
+    .heading{
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+    }
+}
