@@ -25,4 +25,4 @@ Before running the application, make sure you have the following installed:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/Profile-Dashboard-App.git
+   https://github.com/aaryanmehta26/Profile-Dashboard-Project/tree/main
