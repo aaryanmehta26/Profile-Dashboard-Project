@@ -15,7 +15,7 @@ const MyPosts = () => {
 
   const fetchPosts = async () => {
     /** FETCHING POSTS */
-    const { data } = await axios.get("api/posts");
+    const { data } = await axios.get("/api/posts");
     setPosts(data);
   };
 
