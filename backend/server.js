@@ -1,22 +1,28 @@
 const express = require('express');
-const notes = require('./data/notes');
+const posts = require('./data/posts');
+const userRoutes = require('./routes/userRoutes')
 const dotenv = require('dotenv');
+const connectDataBase = require('./config/db');
+const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
+// const { authorised } = require('./middlewares/authMiddleware');
 
 const app = express();
 dotenv.config();
+connectDataBase();
+app.use(express.json()); // to request json data from user (request)
 
-app.get('/', (req, res) => {
-    res.send('API running');
+
+/** DUMMY ROUTE FOR TESTING PURPOSES */
+app.get('/api/posts', (req, res) => {
+    res.send(posts);
 })
 
-app.get('/api/notes', (req, res) => {
-    res.send(notes);
-})
+/** ACTUAL ROUTE HANDLER */
+app.use('/api/users', userRoutes);
 
-app.get('/api/notes/:id', (req, res) => {
-    const note = notes.find(note => note._id === req.params.id)
-    res.send(note);
-})
+// adding error middlewares
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
