@@ -19,13 +19,7 @@ app.get("/api/posts", (req, res) => {
 
 /** ------------ DEPLOYMENT --------------- */
 const __dirname1 = path.resolve(); // path comes from node
-console.log("######", __dirname1, process.env.NODE_ENV);
-
 if (process.env.NODE_ENV === "production") {
-  console.log(
-    "######",
-    path.resolve(__dirname1, "frontend", "build", "index.html")
-  );
   app.use(express.static(path.join(__dirname1, "/frontend/build")));
 
   app.get("*", (req, res) =>
