@@ -4,7 +4,6 @@
   "private": true,
   "proxy": "http://127.0.0.1:9000",
   "dependencies": {
-    "@babel/core": "^7.24.0",
     "@babel/eslint-parser": "^7.23.10",
     "@babel/preset-env": "^7.24.0",
     "@reduxjs/toolkit": "^2.2.1",
@@ -47,6 +46,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/core": "^7.24.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-react": "^7.23.3",
+    "babel-preset-react-app": "^10.0.1"
   }
 }
